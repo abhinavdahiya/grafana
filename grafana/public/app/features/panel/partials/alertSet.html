@@ -1,0 +1,61 @@
+
+<div class="editor-row">
+
+	<div ng-repeat="alert in panel.alerts" >
+		<li class="tight-form-item">
+			<input type="checkbox" ng-model="alert.enable" ng-checked="alert.enable" checked="checked" style="display:block">
+			<!-- <label id="enableAlert{{$index}}" class="cr1"></label> -->
+		</li>
+		<li class="tight-form-item" style="width: 178px">
+			<strong>Alert Name</strong>
+		</li>
+		<li class="tight-form-item">
+			<input type="text" class="input-small tight-form-input last" placeholder="Name"
+			  empty-to-null ng-model="alert.name"
+			  ng-model-onblur
+			  >
+		</li class="tight-form-item">
+		<li class="tight-form-item" style="width: 178px">
+			<strong>Threshold</strong>
+		</li>
+		<li class="tight-form-item">
+			<input type="text" class="input-small tight-form-input last" placeholder="0"
+			  empty-to-null ng-model="alert.threshold1"
+			  ng-model-onblur
+			  >
+		</li>
+		<li class="tight-form-item" style="width: 20px">
+			<strong>-</strong>
+		</li>
+		<li class="tight-form-item">
+			<input type="text" class="input-small tight-form-input last" placeholder="0"
+			 	empty-to-null ng-model="alert.threshold2"
+			   ng-model-onblur
+			  >
+		</li>
+		<li class="tight-form-item">
+			<select class="input-medium " ng-model="alert.targetName" 
+			ng-options="f.target for f in panel.targets"
+			ng-model-onchange>
+			</select>
+		</li>
+		<li class="tight-form-item">
+			{{alert.targetName.target}}
+		</li>
+		<li class="tight-form-item">
+			<a class="pointer" tabindex="" ng-click="remove_alert(alert)">
+				<i class="fa fa-remove"></i>
+			</a>
+		</li>
+	
+	</div>
+	<div class="section" style="margin-bottom: 20px">
+		<button class="btn btn-inverse" style="margin-top: 20px" ng-click="add_alert()">
+			Add Alert
+		</button>
+	</div>
+	<script type="text/javascript">
+
+	</script>
+</div>
+

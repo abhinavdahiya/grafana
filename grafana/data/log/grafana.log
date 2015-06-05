@@ -1,0 +1,205 @@
+2015/06/04 12:11:48 [I] Starting Grafana
+2015/06/04 12:11:48 [I] Version: master, Commit: NA, Build date: 1970-01-01 05:30:00 +0530 IST
+2015/06/04 12:11:48 [I] Configuration Info
+Config files:
+  [0]: /Users/Abhinav/go/src/github.com/grafana/grafana/conf/defaults.ini
+Paths:
+  home: /Users/Abhinav/go/src/github.com/grafana/grafana
+  data: /Users/Abhinav/go/src/github.com/grafana/grafana/data
+  logs: /Users/Abhinav/go/src/github.com/grafana/grafana/data/log
+
+2015/06/04 12:11:48 [I] Database: sqlite3, ConnectionString: file:/Users/Abhinav/go/src/github.com/grafana/grafana/data/grafana.db?cache=shared&mode=rwc&_loc=Local
+2015/06/04 12:11:48 [I] Migrator: Starting DB migration
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create migration_log table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create user table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index user.login
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index user.email
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_user_login - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_user_email - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Rename table user to user_v1 - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create user table v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_user_login - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_user_email - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy data_source v1 to v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Drop old table user_v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create star table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index star.user_id_dashboard_id
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create org table v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_org_name - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create org_user table v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index IDX_org_user_org_id - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_org_user_org_id_user_id - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy data account to org
+2015/06/04 12:11:48 [I] Migrator: skipping migration id: copy data account to org, condition not fulfilled
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy data account_user to org_user
+2015/06/04 12:11:48 [I] Migrator: skipping migration id: copy data account_user to org_user, condition not fulfilled
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Drop old table account
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Drop old table account_user
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create dashboard table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add index dashboard.account_id
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index dashboard_account_id_slug
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create dashboard_tag table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index dashboard_tag.dasboard_id_term
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_dashboard_tag_dashboard_id_term - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Rename table dashboard to dashboard_v1 - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create dashboard v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index IDX_dashboard_org_id - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_dashboard_org_id_slug - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy dashboard v1 to v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop table dashboard_v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: alter dashboard.data to mediumtext v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create data_source table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add index data_source.account_id
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add unique index data_source.account_id_name
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index IDX_data_source_account_id - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_data_source_account_id_name - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Rename table data_source to data_source_v1 - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create data_source table v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index IDX_data_source_org_id - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_data_source_org_id_name - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy data_source v1 to v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Drop old table data_source_v1 #2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create api_key table
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add index api_key.account_id
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add index api_key.key
+2015/06/04 12:11:48 [I] Migrator: exec migration id: add index api_key.account_id_name
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index IDX_api_key_account_id - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_api_key_key - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop index UQE_api_key_account_id_name - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Rename table api_key to api_key_v1 - v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create api_key table v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index IDX_api_key_org_id - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_api_key_key - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_api_key_org_id_name - v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: copy api_key v1 to v2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: Drop old table api_key_v1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create dashboard_snapshot table v4
+2015/06/04 12:11:48 [I] Migrator: exec migration id: drop table dashboard_snapshot_v4 #1
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create dashboard_snapshot table v5 #2
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_dashboard_snapshot_key - v5
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index UQE_dashboard_snapshot_delete_key - v5
+2015/06/04 12:11:48 [I] Migrator: exec migration id: create index IDX_dashboard_snapshot_user_id - v5
+2015/06/04 12:11:48 [I] Migrator: exec migration id: alter dashboard_snapshot to mediumtext v2
+2015/06/04 12:11:48 [I] Created default admin user: admin
+2015/06/04 12:11:48 [I] Listen: http://0.0.0.0:3000
+2015/06/04 12:12:12 [I] Starting Grafana
+2015/06/04 12:12:12 [I] Version: master, Commit: NA, Build date: 1970-01-01 05:30:00 +0530 IST
+2015/06/04 12:12:12 [I] Configuration Info
+Config files:
+  [0]: /Users/Abhinav/go/src/github.com/grafana/grafana/conf/defaults.ini
+Paths:
+  home: /Users/Abhinav/go/src/github.com/grafana/grafana
+  data: /Users/Abhinav/go/src/github.com/grafana/grafana/data
+  logs: /Users/Abhinav/go/src/github.com/grafana/grafana/data/log
+
+2015/06/04 12:12:12 [I] Database: sqlite3, ConnectionString: file:/Users/Abhinav/go/src/github.com/grafana/grafana/data/grafana.db?cache=shared&mode=rwc&_loc=Local
+2015/06/04 12:12:12 [I] Migrator: Starting DB migration
+2015/06/04 12:12:12 [I] Listen: http://0.0.0.0:3000
+2015/06/04 12:12:33 [I] Completed / 302 Found in 1.550723ms
+2015/06/04 12:12:33 [I] [1;31mCompleted /css/grafana.dark.min.css 404 Not Found in 696.314µs[0m
+2015/06/04 12:23:19 [I] Starting Grafana
+2015/06/04 12:23:19 [I] Version: master, Commit: NA, Build date: 1970-01-01 05:30:00 +0530 IST
+2015/06/04 12:23:19 [I] Configuration Info
+Config files:
+  [0]: /Users/Abhinav/go/src/github.com/grafana/grafana/conf/defaults.ini
+Paths:
+  home: /Users/Abhinav/go/src/github.com/grafana/grafana
+  data: /Users/Abhinav/go/src/github.com/grafana/grafana/data
+  logs: /Users/Abhinav/go/src/github.com/grafana/grafana/data/log
+
+2015/06/04 12:23:19 [I] Database: sqlite3, ConnectionString: file:/Users/Abhinav/go/src/github.com/grafana/grafana/data/grafana.db?cache=shared&mode=rwc&_loc=Local
+2015/06/04 12:23:19 [I] Migrator: Starting DB migration
+2015/06/04 12:23:19 [I] Listen: http://0.0.0.0:3000
+2015/06/04 12:27:04 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 288.16502ms[0m
+2015/06/04 12:27:15 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 62.419394ms[0m
+2015/06/04 12:27:17 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 49.787122ms[0m
+2015/06/04 12:27:17 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 3.592453ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 6.166644ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 4.230959ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 5.313268ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 3.812967ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 8.220356ms[0m
+2015/06/04 12:27:18 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 4.117286ms[0m
+2015/06/04 12:27:19 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 3.763347ms[0m
+2015/06/04 12:27:19 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 5.417853ms[0m
+2015/06/04 12:27:19 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 16.712053ms[0m
+2015/06/04 12:27:19 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 12.225153ms[0m
+2015/06/04 12:27:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 73.365166ms[0m
+2015/06/04 12:27:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 4.152313ms[0m
+2015/06/04 12:27:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 12.035164ms[0m
+2015/06/04 12:27:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 193.197343ms[0m
+2015/06/04 12:27:34 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 99.142474ms[0m
+2015/06/04 12:27:35 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 9.967153ms[0m
+2015/06/04 12:27:35 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 42.942657ms[0m
+2015/06/04 12:27:35 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 8.713484ms[0m
+2015/06/04 12:29:58 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 197.215947ms[0m
+2015/06/04 12:30:25 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 63.608991ms[0m
+2015/06/04 12:30:44 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 132.054272ms[0m
+2015/06/04 12:30:45 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 57.053517ms[0m
+2015/06/04 12:30:46 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 152.076916ms[0m
+2015/06/04 12:30:47 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 161.095001ms[0m
+2015/06/04 12:30:47 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 185.538854ms[0m
+2015/06/04 12:30:55 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 58.370764ms[0m
+2015/06/04 12:30:57 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 164.688657ms[0m
+2015/06/04 12:48:54 [I] Starting Grafana
+2015/06/04 12:48:54 [I] Version: master, Commit: NA, Build date: 1970-01-01 05:30:00 +0530 IST
+2015/06/04 12:48:54 [I] Configuration Info
+Config files:
+  [0]: /Users/Abhinav/go/src/github.com/grafana/grafana/conf/defaults.ini
+Paths:
+  home: /Users/Abhinav/go/src/github.com/grafana/grafana
+  data: /Users/Abhinav/go/src/github.com/grafana/grafana/data
+  logs: /Users/Abhinav/go/src/github.com/grafana/grafana/data/log
+
+2015/06/04 12:48:54 [I] Database: sqlite3, ConnectionString: file:/Users/Abhinav/go/src/github.com/grafana/grafana/data/grafana.db?cache=shared&mode=rwc&_loc=Local
+2015/06/04 12:48:54 [I] Migrator: Starting DB migration
+2015/06/04 12:48:54 [I] Listen: http://0.0.0.0:3000
+2015/06/04 13:23:46 [I] [1;36mCompleted /render 500 Internal Server Error in 30.002430164s[0m
+2015/06/04 13:23:48 [I] [1;36mCompleted /render 500 Internal Server Error in 30.007022199s[0m
+2015/06/04 17:11:17 [I] [1;36mCompleted /render 500 Internal Server Error in 30.005930701s[0m
+2015/06/04 17:11:17 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.001547445s[0m
+2015/06/04 17:12:14 [I] [1;36mCompleted /render 500 Internal Server Error in 30.002349933s[0m
+2015/06/04 17:12:14 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.006913001s[0m
+2015/06/04 17:14:20 [I] [1;36mCompleted /render 500 Internal Server Error in 30.00171011s[0m
+2015/06/04 17:14:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.003461803s[0m
+2015/06/04 17:22:44 [I] [1;36mCompleted /render 500 Internal Server Error in 1.23274ms[0m
+2015/06/04 17:22:51 [I] [1;36mCompleted /render 500 Internal Server Error in 1.532766ms[0m
+2015/06/04 17:22:52 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 1.729002ms[0m
+2015/06/04 17:22:58 [I] [1;36mCompleted /render 500 Internal Server Error in 30.00588047s[0m
+2015/06/04 17:22:58 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.003566696s[0m
+2015/06/04 17:30:42 [I] [1;36mCompleted /render 500 Internal Server Error in 2.270979ms[0m
+2015/06/04 17:31:00 [I] [1;36mCompleted /render 500 Internal Server Error in 30.001677343s[0m
+2015/06/04 17:31:05 [I] [1;36mCompleted /render 500 Internal Server Error in 30.006230851s[0m
+2015/06/04 17:31:05 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.003669352s[0m
+2015/06/04 17:37:33 [I] [1;36mCompleted /render 500 Internal Server Error in 30.00540602s[0m
+2015/06/04 18:18:57 [I] [1;36mCompleted /render 500 Internal Server Error in 1.553807ms[0m
+2015/06/04 18:18:58 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 1.173554ms[0m
+2015/06/04 18:19:20 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.001454985s[0m
+2015/06/04 18:19:22 [I] [1;36mCompleted /render 500 Internal Server Error in 30.002852221s[0m
+2015/06/04 18:22:45 [I] [1;36mCompleted /render 500 Internal Server Error in 30.001971902s[0m
+2015/06/04 18:22:45 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.002980473s[0m
+2015/06/04 18:25:23 [I] [1;36mCompleted /render 500 Internal Server Error in 1.529432ms[0m
+2015/06/04 18:25:23 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 1.460311ms[0m
+2015/06/04 18:25:30 [I] [1;36mCompleted /render 500 Internal Server Error in 30.001669337s[0m
+2015/06/04 18:25:34 [I] [1;36mCompleted /render 500 Internal Server Error in 30.002485523s[0m
+2015/06/04 18:25:34 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.003652246s[0m
+2015/06/04 18:26:00 [I] [1;36mCompleted /render 500 Internal Server Error in 30.002688676s[0m
+2015/06/04 18:26:00 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.004874012s[0m
+2015/06/04 18:26:33 [I] [1;36mCompleted /render 500 Internal Server Error in 1.392274ms[0m
+2015/06/04 18:26:45 [I] [1;36mCompleted /render 500 Internal Server Error in 30.006755935s[0m
+2015/06/04 18:26:45 [I] [1;36mCompleted /metrics/find 500 Internal Server Error in 30.002235227s[0m
+2015/06/05 11:23:54 [I] Starting Grafana
+2015/06/05 11:23:54 [I] Version: master, Commit: NA, Build date: 1970-01-01 05:30:00 +0530 IST
+2015/06/05 11:23:54 [I] Configuration Info
+Config files:
+  [0]: /Users/Abhinav/go/src/github.com/grafana/grafana/conf/defaults.ini
+Paths:
+  home: /Users/Abhinav/go/src/github.com/grafana/grafana
+  data: /Users/Abhinav/go/src/github.com/grafana/grafana/data
+  logs: /Users/Abhinav/go/src/github.com/grafana/grafana/data/log
+
+2015/06/05 11:23:54 [I] Database: sqlite3, ConnectionString: file:/Users/Abhinav/go/src/github.com/grafana/grafana/data/grafana.db?cache=shared&mode=rwc&_loc=Local
+2015/06/05 11:23:54 [I] Migrator: Starting DB migration
+2015/06/05 11:23:54 [I] Listen: http://0.0.0.0:3000
+2015/06/05 11:24:00 [I] Completed / 302 Found in 1.712199ms
+2015/06/05 11:24:00 [I] Completed /login 302 Found in 1.763538ms

@@ -1,0 +1,115 @@
+.submenu-controls-visible {
+  .panel-fullscreen {
+    top: 105px;
+  }
+}
+
+.submenu-controls {
+  margin: 15px 10px 8px 14px;
+  font-size: 16px;
+}
+
+.annotation-disabled, .annotation-disabled a {
+  color: @linkColorDisabled;
+}
+
+.annotation-segment {
+  label.cr1 {
+    margin-left: 5px;
+  }
+}
+
+.submenu-item {
+  padding: 8px 7px;
+  margin-right: 20px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: @grafanaPanelBackground;
+  border: @grafanaPanelBorder;
+  margin-right: 10px;
+  display: inline-block;
+
+  .fa-caret-down {
+    font-size: 75%;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.variable-value-link {
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.variable-value-dropdown {
+  position: absolute;
+  top: 27px;
+  min-width: 150px;
+  max-height: 400px;
+  background: @grafanaPanelBackground;
+  box-shadow: 0px 0px 55px 0px black;
+  border: 1px solid @grafanaTargetFuncBackground;
+  z-index: 1000;
+  font-size: @baseFontSize;
+  padding: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.variable-options-wrapper {
+  display: table;
+  width: 100%;
+}
+
+.variable-options-column {
+  max-height: 350px;
+  overflow: auto;
+  display: table-cell;
+  line-height: 26px;
+  &:nth-child(2) {
+    border-left: 1px solid @grafanaTargetFuncBackground;
+  }
+}
+
+.variable-option-tag,
+.variable-option,
+.variable-options-column-header {
+  display: block;
+  padding: 0 27px 0 8px;
+  position: relative;
+
+ .variable-option-icon { display: none }
+
+  &.selected {
+    .variable-option-icon:before {
+      content: "\f00c";
+    }
+    .variable-option-icon {
+      display: block;
+      padding-left: 4px;
+      line-height: 26px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.variable-option {
+  &:hover, &.highlighted {
+    background-color: @blueDark;
+  }
+}
+
+.variable-search-wrapper {
+  input {
+    width: 100%;
+    padding: 7px 8px;
+    height: 100%;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+  }
+}
+
+.dash-nav-link {
+  color: @textColor;
+}
